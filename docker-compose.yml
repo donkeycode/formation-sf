@@ -1,0 +1,24 @@
+version: "2"
+
+services:
+  symfony:
+    build: .
+    volumes:
+      - ".:/code"
+    ports:
+      - "80:8000"
+    links:
+      - db
+
+  db:
+    image: mysql:5.7
+    command: --sql_mode="" --default-time-zone="+00:00"  --innodb-buffer-pool-size=8G --innodb-log-buffer-size=256M --innodb-log-file-size=1G --innodb-write-io-threads=16 --innodb-flush-log-at-trx-commit=0
+    environment:
+        MYSQL_ROOT_PASSWORD: root
+        MYSQL_DATABASE: symfony
+        MYSQL_USER: symfony
+        MYSQL_PASSWORD: symfony
+    volumes:
+        - ./db:/var/lib/mysql
+    ports:
+        - 3306:3306
