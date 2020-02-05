@@ -1,0 +1,23 @@
+<span>{{ title }} app is running!</span>
+
+<nav>
+  <a routerLink="/">Dashboard</a>
+  <a routerLink="/books">Books</a>
+</nav>
+<router-outlet></router-outlet>
+
+<!-- <app-card *ngFor="let user of users" [(user)]="user">
+</app-card> -->
+<!--
+
+<app-contact></app-contact>
+
+
+<div *ngFor="let user of users">{{ user | json }}</div>
+
+
+<ng-template ngFor let-user [ngForOf]="users">
+  <app-card [(user)]="user">
+  </app-card>
+  <div>{{ user | json }}</div>
+</ng-template> -->

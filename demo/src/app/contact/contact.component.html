@@ -1,0 +1,9 @@
+<p>contact works!</p>
+
+
+<form [formGroup]="contactForm" (submit)="onSubmit()">
+  <input type="text" formControlName="subject" />
+  <input type="email" formControlName="email" />
+
+  <input type="submit" value="Send" />
+</form>

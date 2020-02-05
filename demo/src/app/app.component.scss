@@ -1,0 +1,14 @@
+@import "../vars";
+
+$bg: red !default;
+
+span {
+  background: $bg;
+}
+
+:host {
+  display: block;
+  border: 1px solid black;
+  background: purple;
+  color: #fff;
+}

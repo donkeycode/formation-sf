@@ -10,6 +10,15 @@ services:
     links:
       - db
 
+  pma:
+    image: phpmyadmin/phpmyadmin
+    links:
+      - db
+    environments:
+      PMA_HOSTS: db
+    ports:
+      - "81:80"
+      
   db:
     image: mysql:5.7
     command: --sql_mode="" --default-time-zone="+00:00"  --innodb-buffer-pool-size=8G --innodb-log-buffer-size=256M --innodb-log-file-size=1G --innodb-write-io-threads=16 --innodb-flush-log-at-trx-commit=0
