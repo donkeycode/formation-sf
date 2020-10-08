@@ -14,7 +14,7 @@ services:
     image: phpmyadmin/phpmyadmin
     links:
       - db
-    environments:
+    environment:
       PMA_HOSTS: db
     ports:
       - "81:80"
